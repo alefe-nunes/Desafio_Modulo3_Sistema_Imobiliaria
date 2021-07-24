@@ -3,20 +3,21 @@ package br.com.zup.Entidades;
 public class Funcionario extends Pessoa{
 
 
-    String matricula;
+    private String numeroDeMatricula;
 
-    public Funcionario(String nome, String matricula) {
+
+    public Funcionario(String nome, String numeroDeMatricula) {
         super(nome);
-        this.matricula = matricula;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+        this.numeroDeMatricula = numeroDeMatricula;
     }
 
 
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("\n_____________________________");
+        string.append("\nO número de matrícula do funcionário responsável pelo atendimento é: " + numeroDeMatricula);
+        return string.toString();
+
+    }
 }

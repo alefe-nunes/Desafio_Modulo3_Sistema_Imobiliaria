@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Imovel {
 
-    String endereco;
-    String codigoDoImovel;
-    String valorDoAluguel;
-    List <Morador> listaDeMoradores= new ArrayList<>();
+    private String endereco;
+    private String codigoDoImovel;
+    private String valorDoAluguel;
+    private static List<Morador> listaDeMoradores = new ArrayList<>();
 
-    public Imovel(String endereco, String codigoDoImovel, String valorDoAluguel, List<Morador> listaDeMoradores) {
+    public Imovel(String endereco, String codigoDoImovel, String valorDoAluguel) {
         this.endereco = endereco;
         this.codigoDoImovel = codigoDoImovel;
         this.valorDoAluguel = valorDoAluguel;
-        this.listaDeMoradores = listaDeMoradores;
+
     }
 
     public String getEndereco() {
@@ -41,5 +41,16 @@ public class Imovel {
         this.valorDoAluguel = valorDoAluguel;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("\n_____________________________");
+        string.append("\nO endereço do imóvel é: " + endereco);
+        string.append("\nO código do imóvel é: " + codigoDoImovel);
+        string.append("\nO valor do aluguel é: " + endereco);
+        return string.toString();
+
+
+    }
 
 }
