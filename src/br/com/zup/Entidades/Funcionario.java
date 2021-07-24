@@ -5,6 +5,8 @@ public class Funcionario extends Pessoa{
 
     private String numeroDeMatricula;
 
+    public Funcionario () {}
+
 
     public Funcionario(String nome, String numeroDeMatricula) {
         super(nome);

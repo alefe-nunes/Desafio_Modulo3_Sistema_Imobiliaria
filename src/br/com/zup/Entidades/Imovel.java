@@ -10,11 +10,13 @@ public class Imovel {
     private String valorDoAluguel;
     private static List<Morador> listaDeMoradores = new ArrayList<>();
 
+    public Imovel() {
+    }
+
     public Imovel(String endereco, String codigoDoImovel, String valorDoAluguel) {
         this.endereco = endereco;
         this.codigoDoImovel = codigoDoImovel;
         this.valorDoAluguel = valorDoAluguel;
-
     }
 
     public String getEndereco() {
@@ -40,6 +42,23 @@ public class Imovel {
     public void setValorDoAluguel(String valorDoAluguel) {
         this.valorDoAluguel = valorDoAluguel;
     }
+
+
+    public static void adicionarMorador(Morador moradores) {
+
+        listaDeMoradores.add(moradores);
+    }
+
+    public static void exibirListaDeMoradores () {
+
+        System.out.println("ESTA É A LISTA DE MORADORES");
+
+        for (Morador elementoDaLista : listaDeMoradores) {
+
+            System.out.println(elementoDaLista);
+        }
+    }
+
 
     @Override
     public String toString() {

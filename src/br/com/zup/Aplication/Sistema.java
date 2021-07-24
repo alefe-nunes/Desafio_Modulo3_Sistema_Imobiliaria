@@ -4,14 +4,14 @@ import br.com.zup.Entidades.Catalogo;
 import br.com.zup.Entidades.Imovel;
 import br.com.zup.Entidades.Morador;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema {
 
 
-
-    public static Imovel cadastrarImovel() {
+    public static void cadastrarImovel() {
 
         System.out.println("Agora vamos cadastrar um imóvel");
 
@@ -29,9 +29,7 @@ public class Sistema {
 
         Imovel imovel = new Imovel(endereco, codigoDoImovel, valorDoAluguel);
 
-        return imovel;
-
-    }
+        }
 
 
     public static void cadastrarMorador() {
@@ -46,12 +44,13 @@ public class Sistema {
 
         int quantidadeDeMoradores = IO.criaScanner().nextInt();
 
+
         for (int quantidade = 0; quantidade < quantidadeDeMoradores; quantidade++) {
-         //   listaDeMoradores.add();
+            listaDeMoradores.add(cadastrarImovel());
         }
 
-        Imovel imovel = new Imovel(cadastrarImovel().getEndereco(), cadastrarImovel().getCodigoDoImovel(), cadastrarImovel().getValorDoAluguel());
-        Catalogo.adicionarImovelAoCatalogo(imovel);
+        Morador morador = new Morador(nome , cpf,  quantidadeDeMoradores);
+        Imovel.adicionarMorador(morador);
 
 
         System.out.println("Qual é o nome?");
@@ -62,7 +61,8 @@ public class Sistema {
 
         IO.criaScanner().nextLine();
 
-    }
+       }
+
 
     public static void cadastrarFuncionario() {
 
@@ -77,8 +77,6 @@ public class Sistema {
         String numeroDeMatricula = IO.criaScanner().nextLine();
 
     }
-
-
 
 
     public static void menu() {

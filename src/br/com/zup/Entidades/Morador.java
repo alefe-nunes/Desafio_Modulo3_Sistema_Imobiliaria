@@ -4,22 +4,31 @@ public class Morador extends Pessoa {
 
 
     private String cpf;
-    private String quantidadeDeMoradores;
+    private int quantidadeDeMoradores;
 
-    public Morador(String nome, String CPF , String quantidadeDeMoradores) {
+    public Morador () {}
+
+    public Morador(String nome, String cpf, int quantidadeDeMoradores) {
         super(nome);
         this.cpf = cpf;
         this.quantidadeDeMoradores = quantidadeDeMoradores;
     }
 
-    public String getCPF() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCPF(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
+    public int getQuantidadeDeMoradores() {
+        return quantidadeDeMoradores;
+    }
+
+    public void setQuantidadeDeMoradores(int quantidadeDeMoradores) {
+        this.quantidadeDeMoradores = quantidadeDeMoradores;
+    }
 
     @Override
     public String toString() {
