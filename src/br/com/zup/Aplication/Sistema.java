@@ -1,6 +1,7 @@
 package br.com.zup.Aplication;
 
 import br.com.zup.Entidades.Catalogo;
+import br.com.zup.Entidades.Funcionario;
 import br.com.zup.Entidades.Imovel;
 import br.com.zup.Entidades.Morador;
 
@@ -29,7 +30,10 @@ public class Sistema {
 
         Imovel imovel = new Imovel(endereco, codigoDoImovel, valorDoAluguel);
 
-        }
+        Catalogo.adicionarImovelAoCatalogo(imovel);
+
+
+    }
 
 
     public static void cadastrarMorador() {
@@ -38,30 +42,37 @@ public class Sistema {
 
         System.out.println("Agora vamos cadastrar os moradores");
 
-        IO.criaScanner().nextLine();
-
-        System.out.println("Quantos moradores são?");
-
-        int quantidadeDeMoradores = IO.criaScanner().nextInt();
-
-
-        for (int quantidade = 0; quantidade < quantidadeDeMoradores; quantidade++) {
-            listaDeMoradores.add(cadastrarImovel());
-        }
-
-        Morador morador = new Morador(nome , cpf,  quantidadeDeMoradores);
-        Imovel.adicionarMorador(morador);
-
-
         System.out.println("Qual é o nome?");
 
-        IO.criaScanner().nextLine();
+        String nome = IO.criaScanner().nextLine();
 
         System.out.println("Qual é o CPF do morador?");
 
-        IO.criaScanner().nextLine();
+        String cpf = IO.criaScanner().nextLine();
 
-       }
+        System.out.println("Você deseja cadastrar outro morador?");
+
+        System.out.println("DIgite SIM ou NÃO");
+
+        String opcao = IO.criaScanner().next();
+
+        if (opcao.equals("SIM")) {
+
+
+            Morador morador = new Morador(nome, cpf, listaDeMoradores.size());
+            Imovel.adicionarMorador(morador);
+
+            listaDeMoradores.add(morador);
+
+        } else {
+
+
+            menu();
+
+        }
+
+
+    }
 
 
     public static void cadastrarFuncionario() {
@@ -75,6 +86,10 @@ public class Sistema {
         System.out.println("Qual é o número de matricula dele?");
 
         String numeroDeMatricula = IO.criaScanner().nextLine();
+
+        Funcionario funcionario = new Funcionario(nome, numeroDeMatricula);
+
+        System.out.println(funcionario);
 
     }
 
@@ -128,6 +143,7 @@ public class Sistema {
                 case "4":
 
                     Catalogo.exibirCatalogo();
+                    Imovel.exibirListaDeMoradores();
 
                     break;
 

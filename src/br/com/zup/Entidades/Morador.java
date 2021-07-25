@@ -2,7 +2,6 @@ package br.com.zup.Entidades;
 
 public class Morador extends Pessoa {
 
-
     private String cpf;
     private int quantidadeDeMoradores;
 
@@ -13,6 +12,7 @@ public class Morador extends Pessoa {
         this.cpf = cpf;
         this.quantidadeDeMoradores = quantidadeDeMoradores;
     }
+
 
     public String getCpf() {
         return cpf;
