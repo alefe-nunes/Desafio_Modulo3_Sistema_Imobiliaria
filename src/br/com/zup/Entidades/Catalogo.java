@@ -26,4 +26,20 @@ public class Catalogo {
 
     }
 
+    public static void excluirMoradorDeUmImovel(String endereco, String cpf) {
+
+        for (Imovel elementoDaLista : listaDeImoveis) {
+
+            if (elementoDaLista.getEndereco().equals(endereco)) {
+
+                elementoDaLista.excluirMoradorDoImovel(cpf);
+            }
+        }
+    }
+
+
 }
+
+
+
+

@@ -89,7 +89,25 @@ public class Sistema {
 
         Funcionario funcionario = new Funcionario(nome, numeroDeMatricula);
 
-        System.out.println(funcionario);
+       // System.out.println(funcionario);
+
+    }
+
+
+    public static void excluirMorador() {
+
+        System.out.println("Vamos excluir um morador de um dos imóveis");
+
+        System.out.println("Digite o endereço do imóvel ");
+
+        String endereco = IO.criaScanner().nextLine();
+
+        System.out.println("Agora digite o CPF do morador que você quer excluir");
+
+        String cpf = IO.criaScanner().nextLine();
+
+        Catalogo.excluirMoradorDeUmImovel(endereco, cpf);
+
 
     }
 
@@ -102,18 +120,16 @@ public class Sistema {
         System.out.println("Digite 2 para cadastrar morador ");
         System.out.println("Digite 3 para cadastrar o funcionário responsável pelo atendimento: ");
         System.out.println("Digite 4 para exibir todos os dados: ");
-        System.out.println("Digite 5 para sair do programa: ");
+        System.out.println("Digite 5 para excluir um morador de um imóvel: ");
+        System.out.println("Digite 99 para sair do programa: ");
     }
 
 
     public static void executarSistema() {
 
-
         boolean executar = true;
 
-
         while (executar == true) {
-
 
             menu();
 
@@ -144,11 +160,18 @@ public class Sistema {
 
                     Catalogo.exibirCatalogo();
                     Imovel.exibirListaDeMoradores();
+                    Funcionario.exibirListaDeFuncionarios();
+
+                    break;
+
+                case "5":
+
+                    excluirMorador();
 
                     break;
 
 
-                case "5":
+                case "99":
 
                     executar = false;
 

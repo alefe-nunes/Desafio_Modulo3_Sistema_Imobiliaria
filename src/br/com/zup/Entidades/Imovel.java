@@ -49,7 +49,7 @@ public class Imovel {
         listaDeMoradores.add(moradores);
     }
 
-    public static void exibirListaDeMoradores () {
+    public static void exibirListaDeMoradores() {
 
         System.out.println("ESTA É A LISTA DE MORADORES");
 
@@ -57,6 +57,22 @@ public class Imovel {
 
             System.out.println(elementoDaLista);
         }
+    }
+
+
+    public void excluirMoradorDoImovel(String cpf) {
+
+        Morador moradorDeResposta = null;
+
+        for (Morador elementoDaListaDeMoradores : listaDeMoradores) {
+
+            if (elementoDaListaDeMoradores.getCpf().equals(cpf)) {
+
+                moradorDeResposta = elementoDaListaDeMoradores;
+            }
+        }
+
+        listaDeMoradores.remove(moradorDeResposta);
     }
 
 

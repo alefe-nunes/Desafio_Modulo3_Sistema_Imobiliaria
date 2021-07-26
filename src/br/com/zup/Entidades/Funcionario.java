@@ -1,12 +1,20 @@
 package br.com.zup.Entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Funcionario extends Pessoa{
 
 
     private String numeroDeMatricula;
+    private static List <Funcionario> listaDeFuncionarios = new ArrayList<>();
 
     public Funcionario () {}
 
+
+    public Funcionario(String numeroDeMatricula) {
+        this.numeroDeMatricula = numeroDeMatricula;
+    }
 
     public Funcionario(String nome, String numeroDeMatricula) {
         super(nome);
@@ -20,6 +28,24 @@ public class Funcionario extends Pessoa{
     public void setNumeroDeMatricula(String numeroDeMatricula) {
         this.numeroDeMatricula = numeroDeMatricula;
     }
+
+    public static void adicionarFuncionario(Funcionario funcionario) {
+
+        listaDeFuncionarios.add(funcionario);
+    }
+
+    public static void exibirListaDeFuncionarios() {
+
+        System.out.println("ESTE É O FUNCIONÁRIO QUE TE ATENDEU");
+
+        for (Funcionario elementoDaLista : listaDeFuncionarios) {
+
+            System.out.println(elementoDaLista);
+        }
+    }
+
+
+
 
     @Override
     public String toString() {

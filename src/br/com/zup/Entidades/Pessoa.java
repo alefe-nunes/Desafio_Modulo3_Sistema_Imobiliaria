@@ -1,6 +1,6 @@
 package br.com.zup.Entidades;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     private String nome;
 
