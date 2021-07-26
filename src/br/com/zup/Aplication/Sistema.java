@@ -42,6 +42,10 @@ public class Sistema {
 
         System.out.println("Agora vamos cadastrar os moradores");
 
+        System.out.println("Em qual dos imóveis ele vai morar? ");
+
+        String endereco = IO.criaScanner().nextLine();
+
         System.out.println("Qual é o nome?");
 
         String nome = IO.criaScanner().nextLine();
@@ -52,17 +56,19 @@ public class Sistema {
 
         System.out.println("Você deseja cadastrar outro morador?");
 
-        System.out.println("DIgite SIM ou NÃO");
+        System.out.println("Digite SIM ou NÃO");
 
         String opcao = IO.criaScanner().next();
 
-        Imovel.exibirListaDeMoradores();
+        Imovel imovel = Catalogo.pesquisarImovel(endereco);
+
+        imovel.exibirListaDeMoradores();
 
         if (opcao.equals("SIM")) {
 
 
             Morador morador = new Morador(nome, cpf, listaDeMoradores.size());
-            Imovel.adicionarMorador(morador);
+            imovel.adicionarMorador(morador);
 
             listaDeMoradores.add(morador);
         }
@@ -164,7 +170,13 @@ public class Sistema {
 
                 case "5":
 
-                    Imovel.exibirListaDeMoradores();
+                    System.out.println("DIgite o endereço do imóvel que você quer ver os moradores. ");
+
+                    String endereco = IO.criaScanner().nextLine();
+
+                    Imovel imovel = Catalogo.pesquisarImovel(endereco);
+
+                    imovel.exibirListaDeMoradores();
 
                     break;
 

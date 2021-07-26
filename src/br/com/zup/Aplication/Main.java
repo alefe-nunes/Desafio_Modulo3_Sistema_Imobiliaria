@@ -7,7 +7,9 @@ public class Main {
         try {
 
             Sistema.executarSistema();
-        } catch (Exception cpfIgual) {
+        }
+
+        catch (Exception cpfIgual) {
 
             System.out.println(cpfIgual.getMessage());
 
@@ -15,7 +17,7 @@ public class Main {
     }
 }
 
-// Tratamento de exceção e método para executar toda a classe "Sitema".
+// Tratamento de exceção e método para executar toda a classe "Sistema".
 
 
 

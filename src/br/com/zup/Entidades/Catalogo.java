@@ -37,6 +37,21 @@ public class Catalogo {
         }
     }
 
+    public static Imovel pesquisarImovel (String endereco) {
+
+        for (Imovel elementoDaLista : listaDeImoveis) {
+
+            if (elementoDaLista.getEndereco().equals(endereco)) {
+
+                return elementoDaLista;
+            }
+        }
+
+        return null;
+    }
+
+
+
 }
 
 // Um catálogo é uma lista de imóveis.
