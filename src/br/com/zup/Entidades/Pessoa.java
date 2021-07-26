@@ -4,7 +4,8 @@ public abstract class Pessoa {
 
     private String nome;
 
-    public Pessoa () {}
+    public Pessoa() {
+    }
 
     public Pessoa(String nome) {
         this.nome = nome;
@@ -18,8 +19,6 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-
-
-
-
 }
+
+// Classe Abstrata porque não será instanciada

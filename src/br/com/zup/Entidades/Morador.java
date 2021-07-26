@@ -30,13 +30,16 @@ public class Morador extends Pessoa {
         this.quantidadeDeMoradores = quantidadeDeMoradores;
     }
 
+
+
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        string.append("\n_____________________________");
-        string.append("\nO nome do morador é: " + getNome());
-        string.append("\nO CPF do morador é : " + cpf);
-        return string.toString();
+        StringBuilder exibir = new StringBuilder();
+        exibir.append("\n_____________________________");
+        exibir.append("\nO nome do morador é: " + getNome());
+        exibir.append("\nO CPF do morador é : " + cpf);
+        exibir.append("\n_____________________________");
+        return exibir.toString();
 
     }
 

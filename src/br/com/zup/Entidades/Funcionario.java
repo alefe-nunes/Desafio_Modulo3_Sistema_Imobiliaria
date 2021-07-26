@@ -3,18 +3,15 @@ package br.com.zup.Entidades;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa {
 
 
     private String numeroDeMatricula;
-    private static List <Funcionario> listaDeFuncionarios = new ArrayList<>();
+    private static List<Funcionario> listaDeFuncionarios = new ArrayList<>();
 
-    public Funcionario () {}
-
-
-    public Funcionario(String numeroDeMatricula) {
-        this.numeroDeMatricula = numeroDeMatricula;
+    public Funcionario() {
     }
+
 
     public Funcionario(String nome, String numeroDeMatricula) {
         super(nome);
@@ -38,22 +35,23 @@ public class Funcionario extends Pessoa{
 
         System.out.println("ESTE É O FUNCIONÁRIO QUE TE ATENDEU");
 
-        for (Funcionario elementoDaLista : listaDeFuncionarios) {
+        for (Funcionario funcionarioDaLista : listaDeFuncionarios) {
 
-            System.out.println(elementoDaLista);
+            System.out.println(funcionarioDaLista);
         }
     }
 
 
-
-
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        string.append("\n_____________________________");
-        string.append("\nO nome do funcionário responsável pelo atendimento é: " + getNome());
-        string.append("\nO número de matrícula dele é: " + numeroDeMatricula);
-        return string.toString();
+        StringBuilder exibir = new StringBuilder();
+        exibir.append("\n_____________________________");
+        exibir.append("\nO nome do funcionário responsável pelo atendimento é: " + getNome());
+        exibir.append("\nO número de matrícula dele é: " + numeroDeMatricula);
+        exibir.append("\n_____________________________");
+        return exibir.toString();
 
     }
 }
+
+// Métodos para exibir o funcionário cadastrado

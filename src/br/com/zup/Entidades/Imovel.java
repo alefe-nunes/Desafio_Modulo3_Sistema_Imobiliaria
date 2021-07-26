@@ -53,39 +53,54 @@ public class Imovel {
 
         System.out.println("ESTA É A LISTA DE MORADORES");
 
-        for (Morador elementoDaLista : listaDeMoradores) {
+        for (Morador moradorDaLista : listaDeMoradores) {
 
-            System.out.println(elementoDaLista);
+            System.out.println(moradorDaLista);
         }
     }
 
 
     public void excluirMoradorDoImovel(String cpf) {
 
-        Morador moradorDeResposta = null;
+        Morador moradorProcurado = null;
 
         for (Morador elementoDaListaDeMoradores : listaDeMoradores) {
 
             if (elementoDaListaDeMoradores.getCpf().equals(cpf)) {
 
-                moradorDeResposta = elementoDaListaDeMoradores;
+                moradorProcurado = elementoDaListaDeMoradores;
             }
         }
 
-        listaDeMoradores.remove(moradorDeResposta);
+        listaDeMoradores.remove(moradorProcurado);
+    }
+
+    public static void verificarSeCpfExiste(String cpf) throws Exception {
+
+        for (Morador elementoDaListaDeMoradores : listaDeMoradores) {
+
+            if (elementoDaListaDeMoradores.getCpf().equals(cpf)) {
+
+                throw new Exception("O morador já foi cadastrado porque o  CPF já consta na lista. Por favor, cadastre outro morador");
+            }
+        }
     }
 
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        string.append("\n_____________________________");
-        string.append("\nO endereço do imóvel é: " + endereco);
-        string.append("\nO código do imóvel é: " + codigoDoImovel);
-        string.append("\nO valor do aluguel é: " + endereco);
-        return string.toString();
-
-
+        StringBuilder exibir = new StringBuilder();
+        exibir.append("\n_____________________________");
+        exibir.append("\nO endereço do imóvel é: " + endereco);
+        exibir.append("\nO código do imóvel é: " + codigoDoImovel);
+        exibir.append("\nO valor do aluguel é: " + endereco);
+        exibir.append("\n_____________________________");
+        return exibir.toString();
     }
-
 }
+
+// Um imóvel contém moradores.
+
+// Métodos para adicionar um morador ao imóvel, exibir a lista de moradores cadastrados, excluir um morador do imóvel e verificar se  o cpf já existe.
+
+// Método para exibir a lista

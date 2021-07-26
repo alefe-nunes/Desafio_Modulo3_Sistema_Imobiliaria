@@ -19,9 +19,9 @@ public class Catalogo {
 
         System.out.println("IMÓVEIS DISPONÍVEIS");
 
-        for (Imovel elementoDaLista : listaDeImoveis) {
+        for (Imovel imovelDaLista : listaDeImoveis) {
 
-            System.out.println(elementoDaLista);
+            System.out.println(imovelDaLista);
         }
 
     }
@@ -37,8 +37,11 @@ public class Catalogo {
         }
     }
 
-
 }
+
+// Um catálogo é uma lista de imóveis.
+
+// Métodos para adicionar imóvel ao catálogo, exibir a lista de imóveis e procurar um morados específico dentro do imóvel.
 
 
 

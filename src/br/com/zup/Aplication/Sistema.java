@@ -32,7 +32,7 @@ public class Sistema {
 
         Catalogo.adicionarImovelAoCatalogo(imovel);
 
-
+        Catalogo.exibirCatalogo();
     }
 
 
@@ -56,6 +56,8 @@ public class Sistema {
 
         String opcao = IO.criaScanner().next();
 
+        Imovel.exibirListaDeMoradores();
+
         if (opcao.equals("SIM")) {
 
 
@@ -63,15 +65,13 @@ public class Sistema {
             Imovel.adicionarMorador(morador);
 
             listaDeMoradores.add(morador);
+        }
 
-        } else {
-
+        else {
 
             menu();
 
         }
-
-
     }
 
 
@@ -89,8 +89,9 @@ public class Sistema {
 
         Funcionario funcionario = new Funcionario(nome, numeroDeMatricula);
 
-       // System.out.println(funcionario);
+        // System.out.println(funcionario);
 
+        Funcionario.exibirListaDeFuncionarios();
     }
 
 
@@ -107,8 +108,6 @@ public class Sistema {
         String cpf = IO.criaScanner().nextLine();
 
         Catalogo.excluirMoradorDeUmImovel(endereco, cpf);
-
-
     }
 
 
@@ -119,8 +118,10 @@ public class Sistema {
         System.out.println("Digite 1 para cadastrar um imóvel: ");
         System.out.println("Digite 2 para cadastrar morador ");
         System.out.println("Digite 3 para cadastrar o funcionário responsável pelo atendimento: ");
-        System.out.println("Digite 4 para exibir todos os dados: ");
-        System.out.println("Digite 5 para excluir um morador de um imóvel: ");
+        System.out.println("Digite 4 para exibir a lista de imóveis: ");
+        System.out.println("Digite 5 para exibir a lista de moradores: ");
+        System.out.println("Digite 6 para exibir os dados do funcionário que te atendeu: ");
+        System.out.println("Digite 7 para excluir um morador de um imóvel: ");
         System.out.println("Digite 99 para sair do programa: ");
     }
 
@@ -136,7 +137,6 @@ public class Sistema {
             String opcoesMenu = IO.criaScanner().nextLine();
 
             switch (opcoesMenu) {
-
 
                 case "1":
 
@@ -159,17 +159,26 @@ public class Sistema {
                 case "4":
 
                     Catalogo.exibirCatalogo();
-                    Imovel.exibirListaDeMoradores();
-                    Funcionario.exibirListaDeFuncionarios();
 
                     break;
 
                 case "5":
 
-                    excluirMorador();
+                    Imovel.exibirListaDeMoradores();
 
                     break;
 
+                case "6":
+
+                    Funcionario.exibirListaDeFuncionarios();
+
+                    break;
+
+                case "7":
+
+                    excluirMorador();
+
+                    break;
 
                 case "99":
 
@@ -178,16 +187,17 @@ public class Sistema {
                     System.out.println("PROGRAMA FINALIZADO");
 
                     break;
+
+                default:
+
+                    System.out.println("OPÇÃO INVÁLIDA");
             }
-
         }
-
     }
-
 }
 
 
-
+// Métodos para receber dos dados do usuário, cadastrar e executar o sistema
 
 
 
