@@ -62,15 +62,14 @@ public class Sistema {
 
         Imovel imovel = Catalogo.pesquisarImovel(endereco);
 
+        Morador morador = new Morador(nome, cpf, listaDeMoradores.size());
+        imovel.adicionarMorador(morador);
+
         imovel.exibirListaDeMoradores();
 
         if (opcao.equals("SIM")) {
 
-
-            Morador morador = new Morador(nome, cpf, listaDeMoradores.size());
-            imovel.adicionarMorador(morador);
-
-            listaDeMoradores.add(morador);
+          listaDeMoradores.add(morador);
         }
 
         else {
@@ -95,7 +94,7 @@ public class Sistema {
 
         Funcionario funcionario = new Funcionario(nome, numeroDeMatricula);
 
-        // System.out.println(funcionario);
+        Funcionario.adicionarFuncionario(funcionario);
 
         Funcionario.exibirListaDeFuncionarios();
     }

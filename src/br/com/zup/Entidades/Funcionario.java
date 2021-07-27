@@ -26,7 +26,8 @@ public class Funcionario extends Pessoa {
         this.numeroDeMatricula = numeroDeMatricula;
     }
 
-    public static void adicionarFuncionario(Funcionario funcionario) {
+
+    public  static void adicionarFuncionario(Funcionario funcionario) {
 
         listaDeFuncionarios.add(funcionario);
     }
@@ -37,7 +38,7 @@ public class Funcionario extends Pessoa {
 
         for (Funcionario funcionarioDaLista : listaDeFuncionarios) {
 
-            System.out.println(listaDeFuncionarios);
+            System.out.println(funcionarioDaLista);
         }
     }
 
