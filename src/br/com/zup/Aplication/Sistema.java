@@ -42,7 +42,7 @@ public class Sistema {
 
         System.out.println("Agora vamos cadastrar os moradores");
 
-        System.out.println("Em qual dos imóveis ele vai morar? ");
+        System.out.println("Em qual dos imóveis ele vai morar? Digite o endereço");
 
         String endereco = IO.criaScanner().nextLine();
 
@@ -170,11 +170,13 @@ public class Sistema {
 
                 case "5":
 
-                    System.out.println("DIgite o endereço do imóvel que você quer ver os moradores. ");
+                    System.out.println("Digite o endereço do imóvel que você quer ver os moradores. ");
 
                     String endereco = IO.criaScanner().nextLine();
 
                     Imovel imovel = Catalogo.pesquisarImovel(endereco);
+
+                    System.out.println(imovel.toString());
 
                     imovel.exibirListaDeMoradores();
 

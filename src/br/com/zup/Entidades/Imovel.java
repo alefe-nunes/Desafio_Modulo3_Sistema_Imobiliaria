@@ -8,7 +8,7 @@ public class Imovel {
     private String endereco;
     private String codigoDoImovel;
     private String valorDoAluguel;
-    private static List<Morador> listaDeMoradores = new ArrayList<>();
+    private List<Morador> listaDeMoradores = new ArrayList<>();
 
     public Imovel() {
     }
@@ -44,18 +44,18 @@ public class Imovel {
     }
 
 
-    public static void adicionarMorador(Morador moradores) {
+    public void adicionarMorador(Morador moradores) {
 
-        listaDeMoradores.add(moradores);
+        this.listaDeMoradores.add(moradores);
     }
 
-    public static void exibirListaDeMoradores() {
+    public void exibirListaDeMoradores() {
 
         System.out.println("ESTA É A LISTA DE MORADORES");
 
-        for (Morador moradorDaLista : listaDeMoradores) {
+        for (Morador moradorDaLista : this.listaDeMoradores) {
 
-            System.out.println(moradorDaLista);
+            System.out.println(listaDeMoradores);
         }
     }
 
@@ -64,7 +64,7 @@ public class Imovel {
 
         Morador moradorProcurado = null;
 
-        for (Morador elementoDaListaDeMoradores : listaDeMoradores) {
+        for (Morador elementoDaListaDeMoradores : this.listaDeMoradores) {
 
             if (elementoDaListaDeMoradores.getCpf().equals(cpf)) {
 
@@ -75,9 +75,9 @@ public class Imovel {
         listaDeMoradores.remove(moradorProcurado);
     }
 
-    public static void verificarSeCpfExiste(String cpf) throws Exception {
+    public void verificarSeCpfExiste(String cpf) throws Exception {
 
-        for (Morador elementoDaListaDeMoradores : listaDeMoradores) {
+        for (Morador elementoDaListaDeMoradores : this.listaDeMoradores) {
 
             if (elementoDaListaDeMoradores.getCpf().equals(cpf)) {
 
@@ -93,7 +93,7 @@ public class Imovel {
         exibir.append("\n_____________________________");
         exibir.append("\nO endereço do imóvel é: " + endereco);
         exibir.append("\nO código do imóvel é: " + codigoDoImovel);
-        exibir.append("\nO valor do aluguel é: " + endereco);
+        exibir.append("\nO valor do aluguel é: " + valorDoAluguel);
         exibir.append("\n_____________________________");
         return exibir.toString();
     }

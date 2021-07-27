@@ -37,7 +37,7 @@ public class Funcionario extends Pessoa {
 
         for (Funcionario funcionarioDaLista : listaDeFuncionarios) {
 
-            System.out.println(funcionarioDaLista);
+            System.out.println(listaDeFuncionarios);
         }
     }
 
